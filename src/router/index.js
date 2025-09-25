@@ -1,17 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
-// Home (already exists)
 const Home = () => import('@/views/Home/HomeView.vue')
 
-// Public catalog module
-import publicRoutes from './modules/public.routes'
+import publicRoutes from './modules/public.routes' 
+import authRoutes from './modules/auth.routes'
+import accountRoutes from './modules/account.routes'
 
 const routes = [
   { path: '/', name: 'home', component: Home },
   ...publicRoutes,
+  ...authRoutes,
+  ...accountRoutes,
   {
     path: '/:pathMatch(.*)*',
-    name: 'not-found-catch',
+    name: 'catch-404',
     component: () => import('@/views/System/NotFoundView.vue'),
   },
 ]
