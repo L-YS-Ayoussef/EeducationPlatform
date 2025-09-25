@@ -13,7 +13,7 @@ const course = computed(() => getCourseBySlug(route.params.slug?.toString() || '
 </script>
 
 <template>
-  <div v-if="!course" class="catalog-container">
+  <div v-if="!course" class="catalog-container-no">
     <h2>لم يتم العثور على الدورة</h2>
     <RouterLink to="/courses" class="btn-primary" style="display:inline-flex;margin-top:10px">العودة إلى الدورات</RouterLink>
   </div>

@@ -14,7 +14,7 @@ const courses = computed(() => getCoursesForInstructor(username.value))
 </script>
 
 <template>
-  <div v-if="!instructor" class="catalog-container">
+  <div v-if="!instructor" class="catalog-container-no">
     <h2>لم يتم العثور على المدرّس</h2>
     <RouterLink to="/instructors" class="btn-primary" style="display:inline-flex;margin-top:10px">العودة إلى القائمة</RouterLink>
   </div>
