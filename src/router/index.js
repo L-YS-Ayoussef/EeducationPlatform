@@ -1,13 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+// Home (already exists)
+const Home = () => import('@/views/Home/HomeView.vue')
+
+// Public catalog module
+import publicRoutes from './modules/public.routes'
+
 const routes = [
+  { path: '/', name: 'home', component: Home },
+  ...publicRoutes,
   {
-    path: '/',
-    name: 'home',
-    component: () => import('../views/Home/HomeView.vue'), // lazy load
+    path: '/:pathMatch(.*)*',
+    name: 'not-found-catch',
+    component: () => import('@/views/System/NotFoundView.vue'),
   },
-  // optional: redirect everything else to home while you're scaffolding
-  { path: '/:pathMatch(.*)*', redirect: '/' },
 ]
 
 const router = createRouter({
