@@ -1,10 +1,12 @@
 <script setup>
-// no imports needed for now
+import AppHeader from '@/components/layout/AppHeader.vue'
+import AppFooter from '@/components/layout/AppFooter.vue'
 </script>
 
 <template>
-  <!-- Keep it bare: just render the current route (Home) -->
+  <AppHeader />
   <RouterView />
+  <AppFooter />
 </template>
 
 <style scoped>
